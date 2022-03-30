@@ -138,4 +138,6 @@ dmypy.json
 cython_debug/
 
 # gdb_history
-ROP_Emporium/write4/.gdb_history
+.gdb_history
+
+.idea/
