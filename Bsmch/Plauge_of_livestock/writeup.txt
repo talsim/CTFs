@@ -1,0 +1,4 @@
+We basically need to analyze the audio file for hidden data.
+So I opened it in the following website: https://www.dcode.fr/spectral-analysis
+At the end, we can see the flag. :D
+BSMCH{H1D1NG_D4T4_F0R_TH3_FUN}

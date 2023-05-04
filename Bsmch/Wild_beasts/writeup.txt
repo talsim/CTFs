@@ -1,0 +1,4 @@
+The script is creating a connection to 127.0.0.1 on a different port everytime...
+The port that it is connecting to is the ASCII value of each letter of the flag.
+So we use a traffic moniter app (like TCPView, something i randomly downloaded to moniter the traffic of this script) and write the port values each time.
+Then we combine it, convert to ASCII letters, and we get the flag. BSMCH{SAMALTO}

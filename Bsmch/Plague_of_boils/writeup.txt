@@ -1,0 +1,4 @@
+Each folder is built of 8 folders (2 main folders * 4 inside every one = 8). This remindes us of a byte. A byte is a series of 8 bits that each one of them is 1, or 0.
+We also notice that in each inner-folder there is another folder. This means the bit is set to 1. If there is not a single folder inside the inner-folder, it means that the bit is set to 0.
+The byte that we construct from each outer-folder, represents an ASCII letter in base 2.
+We convert all the bytes to ASCII later on and get the flag: BSMCH{ASIHNTR}

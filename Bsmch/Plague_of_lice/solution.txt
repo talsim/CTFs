@@ -1,0 +1,3 @@
+The file was hidden with Alternate Data Stream technique.
+
+To see the data hidden: `dir \r Passover`  (on the most outer "Passover" folder)

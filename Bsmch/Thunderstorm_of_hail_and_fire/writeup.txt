@@ -1,0 +1,8 @@
+We need to change the auth cookie to eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJ1c2VybmFtZSI6IkVsc2EiLCJyb2xlIjoiYWRtaW4iLCJjcmVhdGVkQXQiOjEzODYyODA4MDAwMDB9.
+That huge string gives us the the permission to log as admin because of a flow in JWT token handler, that BSMCH didn't take care of.
+The flow is based on the fact that if we set the "alg" (algorithm) field in the header section of the JWT token as follows: {"alg":"none", ...}  More info - https://blog.pentesteracademy.com/hacking-jwt-tokens-the-none-algorithm-67c14bb15771
+Then we can change the fields in the payload section, to an admin user, without getting the error "JWT Invalid Token" from the webserver. We can see the users on the website with https://arendelle.plagues-of-egypt.com/logs and notice that Elsa has the admin role. so we change it in the payload to her details accordingly
+
+Finally, after we gain admin privileges, we have another exploit to craft: printing the flag from the search bar
+There is an SSTI vulnerability in the website. so we can run {{ 5*5 }} and see that it prints 25.
+But if we run {{ flag }} the flag is printed: BSMCH{Elsa's_S3cur1ty_M3ltD0wn}
