@@ -1,0 +1,5 @@
+ret2csu
+
+(1) basically use __libc_csu_init for popping to all the needed registers to call 'ret2win()'
+(2) in step (1), make to sure to pop 0 to rbx (just zero it) and pop 'ret2win@plt' to r12.
+(3) enjoy :)

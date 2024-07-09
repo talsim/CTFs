@@ -1,0 +1,13 @@
+pivoting the stack chain:
+1. We need to make rsp be equal to the heap address that is printed.
+2. So firstly - save the address on the heap that is printed (on purpose).
+3. Then, use the "xchg" gadget to change rsp.
+
+
+
+actual rop chain:
+1. Firstly, call foothold_function() to resolve its address and add ret2win()' offset to its base address (because we don't have a call or even an import to ret2win() function in pivot binary)
+2. After we have called foothold_function(), we can call puts() to leak the foothold_function resolved address.
+3. Now we have the address of foothold_function(), so we can calculate ret2win()' address from foothold_func()' base address.
+4. We are currently in possesion of ret2win()' addr (which we want to call).
+5. Let's in the end redirect execution back to the start of main(), so we'll be able to send a fresh rop chain with the calculated address of ret2win() (we can even not pivot the stack this time, just call ret2win()).
