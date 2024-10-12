@@ -207,6 +207,13 @@ $
 ```
 **Flag**: `ping{h0w_t0_r37urn_an_array_fr0m_a_func710n_in_C++?!}`
 
+<div align="center">
+  <div style="border: 1.5px solid #ccc; display: inline-block; padding: 4px;">
+    <img src="assets/gif/dangle-me-demo.gif" alt="dangle-me Exploit Demo" width = 80% style="display: block; border: none;">
+  </div>
+  <p style="margin-top: 5px;"><em>dangle-me Exploit Demo - locally run on WSL-Ubuntu-22.04</em></p>
+</div>
+
 ## Bypassing PIE Mitigation
 Although we got the flag and solved the task, I had a failed-attempt that I thought would be worth sharing.
 
