@@ -5,7 +5,7 @@
 ## Introduction
 In this challenge, we are provided with a Yara file - a set of rules that help identify malware samples or specific patterns.
 The Yara rule present in the file contains only one but a really long condition, as seen below:  
-[Figure 1 - The Yara rule](assets/yara_rule.png)
+![Figure 1 - The Yara rule](assets/yara_rule.png)
 
 ## Solution
 The condition in the Yara rule describes a file that likely contains the flag.  
